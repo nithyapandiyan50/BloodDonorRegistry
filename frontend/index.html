@@ -12,9 +12,23 @@ body {
     margin: 0;
     color: #330000;
 }
-h2 { text-align: center; font-family: 'Verdana'; font-weight: bold; font-size: 36px; color: #8B0000; padding: 15px 0; margin-bottom: 30px; }
-h2::before { content: "🩸 "; margin-right: 10px; }
-h3 { text-align: center; font-family: 'Verdana'; font-weight: bold; font-size: 28px; color: #5A0000; margin-bottom: 20px; }
+h2 {
+    text-align: center;
+    font-family: 'Verdana';
+    font-weight: bold;
+    font-size: 36px;
+    color: #8B0000;
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+h3 {
+    text-align: center;
+    font-family: 'Verdana';
+    font-weight: bold;
+    font-size: 28px;
+    color: #5A0000;
+    margin-bottom: 20px;
+}
 form, table {
     background-color: #FFF0F0;
     padding: 25px;
@@ -33,35 +47,114 @@ form .row .field {
     min-width: 150px;
 }
 form .row .field.button-field {
-    flex: 0 0 180px; 
+    flex: 0 0 180px;
     display: flex;
     align-items: flex-end;
 }
-form label { display: block; font-weight: bold; margin-bottom: 5px; }
-input { width: 100%; padding: 10px 12px; border-radius: 6px; border: 1px solid #CC0000; font-size: 16px; box-sizing: border-box; }
-input:focus { outline: none; border-color: #8B0000; box-shadow: 0 0 3px #8B0000; }
-button { padding: 6px 10px; border-radius: 6px; border: none; background-color: #8B0000; color: white; cursor: pointer; font-weight: bold; transition: 0.2s; font-size: 14px; }
-button:hover { background-color: #5A0000; transform: scale(1.02); }
-table { width: 100%; border-collapse: collapse; background-color: #FFF0F0; border-radius: 12px; overflow: hidden; box-shadow: 2px 2px 10px rgba(139,0,0,0.2); }
-th, td { border: 1px solid #CC0000; padding: 12px; text-align: center; }
-th { background-color: #8B0000; color: #FFFFFF; font-size: 18px; }
-tr:nth-child(even) { background-color: #FFD6D6; }
-tr:hover { background-color: #FFB6B6; font-weight: bold; }
-.csv-chart-container { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-top: 20px; }
-.csv-controls { display: flex; align-items: center; gap: 10px; }
-.csv-controls button, .csv-controls input { padding: 8px 12px; border-radius: 6px; border: 1px solid #CC0000; background-color: #8B0000; color: white; cursor: pointer; }
-.csv-controls input { background-color: #FFF; color: #000; border: 1px solid #CC0000; cursor: pointer; }
-.csv-controls button:hover { background-color: #5A0000; }
-#bloodChart { max-width: 400px; max-height: 300px; }
-#bloodGroupWrapper { position: relative; }
-.custom-dropdown { border:1px solid #CC0000; border-radius:6px; padding:8px; width:100%; cursor:pointer; background:#FFF; color:#000; font-size:16px; box-sizing:border-box; user-select:none; }
-.dropdown-list { display:none; border:1px solid #CC0000; border-radius:6px; max-height:120px; overflow-y:auto; background:#FFF0F0; position:absolute; list-style:none; margin:0; padding:0; z-index:10; width:100%; }
-.dropdown-list li { padding:8px 10px; cursor:pointer; }
-.dropdown-list li:hover, .dropdown-list li.selected { background:#FFB6B6; font-weight:bold; }
-/* Search Fields */
-#searchFields { display:flex; gap:10px; margin-bottom:15px; align-items:center; flex-wrap: wrap; }
-#searchFields input, #searchFields select { padding:6px; border:1px solid #CC0000; border-radius:6px; font-size:14px; width:150px; }
-#searchFields button { padding:6px 10px; }
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #CC0000;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+input:focus, select:focus {
+    outline: none;
+    border-color: #8B0000;
+    box-shadow: 0 0 3px #8B0000;
+}
+button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #8B0000;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+    font-size: 14px;
+}
+button:hover {
+    background-color: #5A0000;
+    transform: scale(1.02);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFF0F0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px rgba(139,0,0,0.2);
+}
+th, td {
+    border: 1px solid #CC0000;
+    padding: 12px;
+    text-align: center;
+}
+th {
+    background-color: #8B0000;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+tr:nth-child(even) {
+    background-color: #FFD6D6;
+}
+tr:hover {
+    background-color: #FFB6B6;
+    font-weight: bold;
+}
+.csv-chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+}
+.csv-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.csv-controls button, .csv-controls input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #CC0000;
+    background-color: #8B0000;
+    color: white;
+    cursor: pointer;
+}
+.csv-controls input {
+    background-color: #FFF;
+    color: #000;
+    border: 1px solid #CC0000;
+}
+.csv-controls button:hover {
+    background-color: #5A0000;
+}
+#bloodChart {
+    max-width: 400px;
+    max-height: 300px;
+}
+#searchFields {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#searchFields input, #searchFields select {
+    padding: 6px;
+    border: 1px solid #CC0000;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 150px;
+}
 </style>
 </head>
 <body>
@@ -73,13 +166,12 @@ tr:hover { background-color: #FFB6B6; font-weight: bold; }
     <div class="row">
         <div class="field"><label for="name">Name</label><input type="text" id="name" required></div>
         <div class="field"><label for="age">Age</label><input type="number" id="age" required></div>
-        <div class="field" id="bloodGroupWrapper">
-            <label>Blood Group</label>
-            <div id="bloodGroupCustom" tabindex="0" class="custom-dropdown">--Select--</div>
-            <ul id="bloodGroupList" class="dropdown-list">
-                <li>A+</li><li>A-</li><li>B+</li><li>B-</li>
-                <li>O+</li><li>O-</li><li>AB+</li><li>AB-</li>
-            </ul>
+        <div class="field"><label for="bloodGroup">Blood Group</label>
+            <select id="bloodGroup" required>
+                <option value="">--Select--</option>
+                <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                <option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+            </select>
         </div>
         <div class="field"><label for="location">Location</label><input type="text" id="location" required></div>
         <div class="field"><label for="hospital">Hospital</label><input type="text" id="hospital" required></div>
@@ -93,38 +185,23 @@ tr:hover { background-color: #FFB6B6; font-weight: bold; }
 
 <h3>Search Donors</h3>
 <div id="searchFields">
-    <div>
-        <input type="text" id="searchLocation" placeholder="Search by Location">
-        <button id="searchLocationBtn">Search Location</button>
-    </div>
-    <div>
-        <input type="text" id="searchHospital" placeholder="Search by Hospital">
-        <button id="searchHospitalBtn">Search Hospital</button>
-    </div>
-    <div>
-        <select id="searchBloodGroup">
-            <option value="">--All Blood Groups--</option>
-            <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
-            <option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
-        </select>
-        <button id="searchBloodBtn">Search Blood Group</button>
-    </div>
+    <input type="text" id="searchLocation" placeholder="Search by Location">
+    <input type="text" id="searchHospital" placeholder="Search by Hospital">
+    <select id="searchBloodGroup">
+        <option value="">--All Blood Groups--</option>
+        <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+        <option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+    </select>
+    <button id="searchBtn">Search</button>
+    <button id="clearSearch">Clear</button>
 </div>
 
 <h3>All Donors</h3>
 <table id="donorTable">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Date of Donation</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Blood Group</th>
-            <th>Location</th>
-            <th>Hospital</th>
-            <th>Doctor</th>
-            <th>Contact</th>
-            <th>Action</th>
+            <th>ID</th><th>Date</th><th>Name</th><th>Age</th><th>Blood</th>
+            <th>Location</th><th>Hospital</th><th>Doctor</th><th>Contact</th><th>Action</th>
         </tr>
     </thead>
     <tbody></tbody>
@@ -140,151 +217,131 @@ tr:hover { background-color: #FFB6B6; font-weight: bold; }
 </div>
 
 <script>
-let donors=[], idCounter=1000, editId=null;
-function nextDonationDate(){ return new Date().toISOString().split('T')[0]; }
+let donors = [], idCounter = 1000, editId = null;
 
-// Blood group dropdown
-const bgCustom=document.getElementById('bloodGroupCustom');
-const bgList=document.getElementById('bloodGroupList');
-const bgItems=bgList.querySelectorAll('li');
-let bgIndex=-1;
-function openDropdown(){ bgList.style.display='block'; bgIndex=-1; }
-function closeDropdown(){ bgList.style.display='none'; bgIndex=-1; }
-bgCustom.addEventListener('click',()=>{ bgList.style.display==='block'?closeDropdown():openDropdown(); });
-bgCustom.addEventListener('keydown',e=>{
-    if(e.key==='ArrowDown'){ e.preventDefault(); bgIndex=(bgIndex+1)%bgItems.length; updateSelection(); }
-    if(e.key==='ArrowUp'){ e.preventDefault(); bgIndex=(bgIndex-1+bgItems.length)%bgItems.length; updateSelection(); }
-    if(e.key==='Enter' && bgIndex>=0){ e.preventDefault(); 
-        bgCustom.textContent=bgItems[bgIndex].textContent; 
-        closeDropdown(); 
-        document.getElementById('location').focus(); 
-    }
-});
-function updateSelection(){ bgItems.forEach(li=>li.classList.remove('selected')); if(bgIndex>=0){ let li=bgItems[bgIndex]; li.classList.add('selected'); li.scrollIntoView({block:"nearest"}); } }
-bgItems.forEach(li=>li.addEventListener('click',()=>{ bgCustom.textContent=li.textContent; closeDropdown(); document.getElementById('location').focus(); }));
+const nameInput = document.getElementById('name');
+const ageInput = document.getElementById('age');
+const bloodInput = document.getElementById('bloodGroup');
+const locationInput = document.getElementById('location');
+const hospitalInput = document.getElementById('hospital');
+const doctorInput = document.getElementById('doctor');
+const contactInput = document.getElementById('contactNumber');
 
-// Move focus from Age → Blood Group → Location → Hospital → Doctor
-document.getElementById('age').addEventListener('keydown', e=>{
-    if(e.key==='Enter'){ e.preventDefault(); bgCustom.focus(); openDropdown(); }
-});
-document.getElementById('location').addEventListener('keydown', e=>{
-    if(e.key==='Enter'){ e.preventDefault(); document.getElementById('hospital').focus(); }
-});
-document.getElementById('hospital').addEventListener('keydown', e=>{
-    if(e.key==='Enter'){ e.preventDefault(); document.getElementById('doctor').focus(); document.getElementById('doctor').setSelectionRange(document.getElementById('doctor').value.length, document.getElementById('doctor').value.length); }
-});
+function save(){ localStorage.setItem('donors', JSON.stringify(donors)); localStorage.setItem('idCounter', idCounter); }
+function load(){ donors = JSON.parse(localStorage.getItem('donors') || '[]'); idCounter = parseInt(localStorage.getItem('idCounter') || idCounter); }
 
-// Form submit
-document.getElementById('donorForm').onsubmit=function(e){
+document.getElementById('donorForm').onsubmit = e => {
     e.preventDefault();
-    let doctorVal=document.getElementById('doctor').value.trim();
-    if(doctorVal.toLowerCase()==='dr.') doctorVal='Dr.';
-    let donor={ 
-        id: editId ?? idCounter++, 
-        donationDate: nextDonationDate(), 
-        name: document.getElementById('name').value, 
-        age: document.getElementById('age').value, 
-        bloodGroup:bgCustom.textContent==='--Select--'?'':bgCustom.textContent, 
-        location:document.getElementById('location').value, 
-        hospital:document.getElementById('hospital').value, 
-        doctor:doctorVal, 
-        contactNumber:document.getElementById('contactNumber').value 
+    let donor = {
+        id: editId ?? idCounter++,
+        donationDate: new Date().toISOString().split('T')[0],
+        name: nameInput.value,
+        age: ageInput.value,
+        bloodGroup: bloodInput.value,
+        location: locationInput.value,
+        hospital: hospitalInput.value,
+        doctor: doctorInput.value,
+        contactNumber: contactInput.value
     };
-    if(editId){ donors=donors.map(d=>d.id===editId?donor:d); editId=null; } else donors.push(donor);
-    saveLocalStorage();
-    renderTable(donors);
-    renderChart(donors);
-    this.reset(); bgCustom.textContent='--Select--';
-    document.getElementById('doctor').value='Dr.';
-}
+    if (editId) donors = donors.map(d => d.id === editId ? donor : d);
+    else donors.push(donor);
+    editId = null;
+    save(); render(); chartDraw();
+    e.target.reset();
+    bloodInput.value = '';
+    doctorInput.value = 'Dr.';
+};
 
-// Save/load data
-function saveLocalStorage(){ localStorage.setItem('donors',JSON.stringify(donors)); localStorage.setItem('idCounter',idCounter); }
-function loadLocalStorage(){ donors=JSON.parse(localStorage.getItem('donors')||'[]'); idCounter=parseInt(localStorage.getItem('idCounter')||idCounter); }
-loadLocalStorage();
-
-// Render table
-function renderTable(list){
-    let tbody=document.querySelector('#donorTable tbody'); tbody.innerHTML='';
-    list.forEach(d=>{ 
-        tbody.innerHTML+=`<tr>
-            <td>${d.id}</td><td>${d.donationDate}</td><td>${d.name}</td><td>${d.age}</td><td>${d.bloodGroup}</td>
-            <td>${d.location}</td><td>${d.hospital}</td><td>${d.doctor}</td><td>${d.contactNumber}</td>
-            <td><button onclick="editDonor(${d.id})">Edit</button> <button onclick="deleteDonor(${d.id})">Delete</button></td>
+function render(list = donors) {
+    let tbody = document.querySelector('#donorTable tbody');
+    tbody.innerHTML = '';
+    list.forEach(d => {
+        tbody.innerHTML += `<tr>
+            <td>${d.id}</td><td>${d.donationDate}</td><td>${d.name}</td><td>${d.age}</td>
+            <td>${d.bloodGroup}</td><td>${d.location}</td><td>${d.hospital}</td>
+            <td>${d.doctor}</td><td>${d.contactNumber}</td>
+            <td><button onclick="edit(${d.id})">Edit</button>
+                <button onclick="del(${d.id})">Delete</button></td>
         </tr>`;
     });
 }
 
-// Edit/Delete
-function editDonor(id){ 
-    let d=donors.find(x=>x.id===id); 
-    document.getElementById('name').value=d.name; 
-    document.getElementById('age').value=d.age; 
-    bgCustom.textContent=d.bloodGroup; 
-    document.getElementById('location').value=d.location; 
-    document.getElementById('hospital').value=d.hospital; 
-    document.getElementById('doctor').value=d.doctor; 
-    document.getElementById('contactNumber').value=d.contactNumber; 
-    editId=id; 
+function edit(id) {
+    let d = donors.find(x => x.id === id);
+    nameInput.value = d.name; ageInput.value = d.age; bloodInput.value = d.bloodGroup;
+    locationInput.value = d.location; hospitalInput.value = d.hospital;
+    doctorInput.value = d.doctor; contactInput.value = d.contactNumber;
+    editId = id;
 }
-function deleteDonor(id){ donors=donors.filter(d=>d.id!==id); saveLocalStorage(); renderTable(donors); renderChart(donors); }
+function del(id){ donors = donors.filter(d => d.id !== id); save(); render(); chartDraw(); }
 
-// Chart
-let chart=null;
-function renderChart(list){
-    let ctx=document.getElementById('bloodChart').getContext('2d'); 
-    let counts={}; list.forEach(d=>counts[d.bloodGroup]=(counts[d.bloodGroup]||0)+1);
+let chart = null;
+function chartDraw(){
+    let ctx = document.getElementById('bloodChart').getContext('2d');
+    let counts = {};
+    donors.forEach(d => counts[d.bloodGroup] = (counts[d.bloodGroup] || 0) + 1);
     if(chart) chart.destroy();
-    chart=new Chart(ctx,{
-        type:'bar', 
-        data:{ labels:Object.keys(counts), datasets:[{ label:'Number of Donors', data:Object.values(counts), backgroundColor:'#8B0000' }] }, 
-        options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} } 
+    chart = new Chart(ctx, {
+        type:'bar',
+        data:{ labels:Object.keys(counts),
+            datasets:[{ label:'Donors', data:Object.values(counts), backgroundColor:'#8B0000' }]},
+        options:{ plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
     });
 }
 
+// Search Functionality
+document.getElementById('searchBtn').addEventListener('click', () => {
+    let loc = document.getElementById('searchLocation').value.toLowerCase();
+    let hosp = document.getElementById('searchHospital').value.toLowerCase();
+    let blood = document.getElementById('searchBloodGroup').value;
+
+    let filtered = donors.filter(d =>
+        (loc === '' || d.location.toLowerCase().includes(loc)) &&
+        (hosp === '' || d.hospital.toLowerCase().includes(hosp)) &&
+        (blood === '' || d.bloodGroup === blood)
+    );
+    render(filtered);
+});
+
+document.getElementById('clearSearch').addEventListener('click', () => {
+    document.getElementById('searchLocation').value = '';
+    document.getElementById('searchHospital').value = '';
+    document.getElementById('searchBloodGroup').value = '';
+    render();
+});
+
 // CSV
-function downloadCSV(){ 
-    let csv='ID,Date,Name,Age,BloodGroup,Location,Hospital,Doctor,Contact\n'; 
-    donors.forEach(d=>{ csv+=${d.id},${d.donationDate},${d.name},${d.age},${d.bloodGroup},${d.location},${d.hospital},${d.doctor},${d.contactNumber}\n; }); 
-    let blob=new Blob([csv],{type:'text/csv'}); 
-    let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='donors.csv'; a.click(); 
-}
-function uploadCSV(){ 
-    let file=document.getElementById('csvFile').files[0]; 
-    if(!file) return alert('Select a CSV file first'); 
-    let reader=new FileReader(); 
-    reader.onload=function(e){ 
-        let lines=e.target.result.split('\n').slice(1); donors=[]; 
-        lines.forEach(line=>{ 
-            if(line.trim()){ 
-                let [id,date,name,age,blood,loc,hosp,doctor,contact]=line.split(','); 
-                donors.push({ id:parseInt(id), donationDate:date, name, age, bloodGroup:blood, location:loc, hospital:hosp, doctor, contactNumber:contact }); 
-                idCounter=Math.max(idCounter,parseInt(id)+1); 
-            } 
-        }); 
-        saveLocalStorage();
-        renderTable(donors); renderChart(donors); 
-    }; 
-    reader.readAsText(file); 
+function downloadCSV(){
+    let csv = 'ID,Date,Name,Age,Blood,Location,Hospital,Doctor,Contact\n';
+    donors.forEach(d => {
+        csv += `${d.id},${d.donationDate},${d.name},${d.age},${d.bloodGroup},${d.location},${d.hospital},${d.doctor},${d.contactNumber}\n`;
+    });
+    let blob = new Blob([csv], {type:'text/csv'});
+    let a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'donors.csv';
+    a.click();
 }
 
-// Separate search functions
-document.getElementById('searchLocationBtn').addEventListener('click', ()=>{
-    let loc=document.getElementById('searchLocation').value.trim().toLowerCase();
-    renderTable(donors.filter(d=>d.location.toLowerCase().includes(loc)));
-});
-document.getElementById('searchHospitalBtn').addEventListener('click', ()=>{
-    let hosp=document.getElementById('searchHospital').value.trim().toLowerCase();
-    renderTable(donors.filter(d=>d.hospital.toLowerCase().includes(hosp)));
-});
-document.getElementById('searchBloodBtn').addEventListener('click', ()=>{
-    let bg=document.getElementById('searchBloodGroup').value;
-    renderTable(donors.filter(d=>bg==='' || d.bloodGroup===bg));
-});
+function uploadCSV(){
+    let file = document.getElementById('csvFile').files[0];
+    if(!file) return alert('Select CSV first!');
+    let reader = new FileReader();
+    reader.onload = e => {
+        donors = []; let lines = e.target.result.split('\n').slice(1);
+        lines.forEach(line => {
+            if(line.trim()){
+                let [id, date, name, age, blood, loc, hosp, doctor, contact] = line.split(',');
+                donors.push({id:+id, donationDate:date, name, age, bloodGroup:blood, location:loc, hospital:hosp, doctor, contactNumber:contact});
+                idCounter = Math.max(idCounter, +id+1);
+            }
+        });
+        save(); render(); chartDraw();
+    };
+    reader.readAsText(file);
+}
 
-// Initial render
-renderTable(donors);
-renderChart(donors);
+load(); render(); chartDraw();
 </script>
 </body>
 </html>
